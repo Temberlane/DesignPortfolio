@@ -108,7 +108,13 @@
       const href = card.getAttribute('href');
       if (href === '#') {
         event.preventDefault();
-        // No alert — the visual "Coming soon" badge already tells the user.
+        const badge = card.querySelector('.case-card__badge');
+        if (badge) {
+          badge.classList.remove('is-shaking');
+          void badge.offsetWidth; // force reflow so re-clicks restart the animation
+          badge.classList.add('is-shaking');
+          badge.addEventListener('animationend', () => badge.classList.remove('is-shaking'), { once: true });
+        }
       }
     });
   });

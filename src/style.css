@@ -9,13 +9,13 @@
    ----------------------------------------- */
 :root {
   /* Color */
-  --c-bg:           #F5F0EB;
+  --c-bg:           #e6e6e6;
   --c-bg-deep:      #F0EAE2;  /* hero-edge wash */
-  --c-surface:      #EDE8E1;
+  --c-surface:      #f5f5f5;
   --c-surface-2:    #E5DFD6;
-  --c-ink:          #2C2C2C;
-  --c-ink-muted:    #6B6560;
-  --c-ink-soft:     #9A938B;
+  --c-ink:          #0b0b0b;
+  --c-ink-muted:    #464340;
+  --c-ink-soft:     #817e7a;
   --c-accent:       #8B7355;  /* warm walnut */
   --c-accent-dark:  #6E5B43;
   --c-accent-soft:  #E9DDD0;
@@ -329,16 +329,17 @@ a { color: inherit; text-decoration: none; }
 
 .hero__tagline {
   font-family: var(--f-display);
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 400;
   font-size: clamp(22px, 2.6vw, 32px);
-  line-height: 1.35;
-  letter-spacing: -0.005em;
-  color: var(--c-accent-dark);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  color: var(--c-ink);
   margin: 0 0 32px;
   max-width: 28ch;
+  white-space: nowrap;
 }
-.hero__tagline em { font-style: italic; color: inherit; }
+.hero__tagline em { font-style: italic; color: var(--c-accent-dark); }
 
 .hero__divider {
   width: 56px;
@@ -625,6 +626,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .learn-card {
+  position: relative;
   border: 1px solid var(--c-border);
   background: var(--c-bg);
   border-radius: 4px;
@@ -639,7 +641,6 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow-card-hover);
   transform: translateY(-2px);
 }
-.learn-card--quiet { background: transparent; }
 
 .learn-card__course {
   font-family: var(--f-sans);
@@ -665,6 +666,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 16px;
 }
 .learn-card__link {
+  position: static;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -678,6 +680,13 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 2px;
   transition: border-color var(--dur-hover) var(--ease), color var(--dur-hover) var(--ease);
 }
+.learn-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.learn-card:hover .learn-card__link,
 .learn-card__link:hover {
   border-color: var(--c-accent);
 }
@@ -775,6 +784,21 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   fill: currentColor;
   opacity: 0.55;
+}
+
+@keyframes badge-shake {
+  0%   { transform: translateX(0);   }
+  20%  { transform: translateX(-5px); }
+  40%  { transform: translateX(5px);  }
+  60%  { transform: translateX(-4px); }
+  80%  { transform: translateX(4px);  }
+  100% { transform: translateX(0);   }
+}
+.case-card__badge.is-shaking {
+  animation: badge-shake 350ms ease-in-out both;
+  background: var(--c-accent);
+  color: var(--c-bg);
+  border-color: var(--c-accent);
 }
 
 .case-card__badge {
