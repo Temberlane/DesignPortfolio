@@ -14,7 +14,7 @@
   --c-surface:      #f5f5f5;
   --c-surface-2:    #E5DFD6;
   --c-ink:          #0b0b0b;
-  --c-ink-muted:    #464340;
+  --c-ink-muted:    #212121;
   --c-ink-soft:     #817e7a;
   --c-accent:       #8B7355;  /* warm walnut */
   --c-accent-dark:  #6E5B43;
@@ -69,7 +69,7 @@ img, svg { display: block; max-width: 100%; }
 
 a { color: inherit; text-decoration: none; }
 
-::selection { background: var(--c-accent-soft); color: var(--c-accent-dark); }
+::selection { background: var(--c-accent-soft); color: var(--c-ink); }
 
 /* -----------------------------------------
    3. Typography utilities
@@ -185,7 +185,7 @@ a { color: inherit; text-decoration: none; }
 .section__heading em {
   font-style: italic;
   font-weight: 400;
-  color: var(--c-accent-dark);
+  color: var(--c-ink-muted);
 }
 
 .section__lede {
@@ -339,7 +339,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 28ch;
   white-space: nowrap;
 }
-.hero__tagline em { font-style: italic; color: var(--c-accent-dark); }
+.hero__tagline em { font-style: italic; color: var(--c-ink-muted); }
 
 .hero__divider {
   width: 56px;
@@ -392,7 +392,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 28px;
   order: 2;
 }
-.hero[data-variant="tagline"] .hero__tagline em { color: var(--c-accent-dark); }
+.hero[data-variant="tagline"] .hero__tagline em { color: var(--c-ink-muted); }
 .hero[data-variant="tagline"] .eyebrow { order: 1; }
 .hero[data-variant="tagline"] .hero__divider { order: 4; }
 .hero[data-variant="tagline"] .hero__blurb { order: 5; }
@@ -462,7 +462,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   border-radius: 999px;
   border: 1px solid var(--c-accent);
-  color: var(--c-accent-dark);
+  color: var(--c-ink-muted);
   background: transparent;
   cursor: pointer;
   transition: background var(--dur-hover) var(--ease),
@@ -518,7 +518,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--c-ink);
   font-weight: 500;
 }
-.about__prose em { color: var(--c-accent-dark); font-style: italic; }
+.about__prose em { color: var(--c-ink-muted); font-style: italic; }
 
 .about__pull {
   margin-top: 12px !important;
@@ -615,14 +615,11 @@ a { color: inherit; text-decoration: none; }
   background: var(--c-bg);
   border: 1px solid var(--c-border);
   border-radius: 4px;
-  transition: background var(--dur-hover) var(--ease),
-              border-color var(--dur-hover) var(--ease);
 }
-.tag:hover { border-color: var(--c-accent); }
 .tag--accent {
   background: var(--c-accent-soft);
   border-color: var(--c-accent-soft);
-  color: var(--c-accent-dark);
+  color: var(--c-ink);
 }
 
 .learn-card {
@@ -648,7 +645,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--c-accent-dark);
+  color: var(--c-ink-soft);
   margin: 0 0 10px;
 }
 .learn-card__title {
@@ -675,7 +672,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--c-accent-dark);
+  color: var(--c-ink-muted);
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
   transition: border-color var(--dur-hover) var(--ease), color var(--dur-hover) var(--ease);
@@ -846,7 +843,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--c-ink);
   margin: 0;
 }
-.case-card__title em { font-style: italic; color: var(--c-accent-dark); }
+.case-card__title em { font-style: italic; color: var(--c-ink-muted); }
 .case-card__desc {
   font-size: 14px;
   line-height: 1.65;
@@ -864,7 +861,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--c-accent-dark);
+  color: var(--c-ink-muted);
   opacity: 0;
   transform: translateY(4px);
   transition: opacity var(--dur-hover) var(--ease),
@@ -887,7 +884,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--c-ink);
   margin: 8px 0 24px;
 }
-.contact__heading em { font-style: italic; color: var(--c-accent-dark); }
+.contact__heading em { font-style: italic; color: var(--c-ink-muted); }
 .contact__body {
   max-width: 520px;
   margin: 0 auto 40px;
