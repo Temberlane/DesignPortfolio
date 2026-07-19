@@ -98,24 +98,4 @@
       });
     });
   });
-
-  /* --------------------------------------------------------
-     5. Tiny "Coming Soon" interception on case cards
-        (prevents the # jump and gives a quiet console signal)
-     -------------------------------------------------------- */
-  document.querySelectorAll('.case-card').forEach((card) => {
-    card.addEventListener('click', (event) => {
-      const href = card.getAttribute('href');
-      if (href === '#') {
-        event.preventDefault();
-        const badge = card.querySelector('.case-card__badge');
-        if (badge) {
-          badge.classList.remove('is-shaking');
-          void badge.offsetWidth; // force reflow so re-clicks restart the animation
-          badge.classList.add('is-shaking');
-          badge.addEventListener('animationend', () => badge.classList.remove('is-shaking'), { once: true });
-        }
-      }
-    });
-  });
 })();

@@ -783,47 +783,6 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.55;
 }
 
-@keyframes badge-shake {
-  0%   { transform: translateX(0);   }
-  20%  { transform: translateX(-5px); }
-  40%  { transform: translateX(5px);  }
-  60%  { transform: translateX(-4px); }
-  80%  { transform: translateX(4px);  }
-  100% { transform: translateX(0);   }
-}
-.case-card__badge.is-shaking {
-  animation: badge-shake 350ms ease-in-out both;
-  background: var(--c-accent);
-  color: var(--c-bg);
-  border-color: var(--c-accent);
-}
-
-.case-card__badge {
-  position: absolute;
-  top: 14px; right: 14px;
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 12px;
-  font-family: var(--f-sans);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--c-ink);
-  background: rgba(245, 240, 235, 0.92);
-  backdrop-filter: blur(6px);
-  border: 1px solid var(--c-border);
-  border-radius: 999px;
-  transition: background var(--dur-hover) var(--ease),
-              color var(--dur-hover) var(--ease),
-              border-color var(--dur-hover) var(--ease);
-}
-.case-card:hover .case-card__badge {
-  background: var(--c-accent);
-  color: var(--c-bg);
-  border-color: var(--c-accent);
-}
-
 .case-card__meta { display: flex; flex-direction: column; gap: 10px; }
 .case-card__index {
   font-family: var(--f-sans);
