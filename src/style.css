@@ -774,6 +774,13 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   color: var(--c-ink);
 }
+.case-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
 .case-num {
   font-family: var(--f-display);
   font-size: 10px;
